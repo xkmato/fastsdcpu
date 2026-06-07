@@ -31,6 +31,7 @@ class ControlNetSetting(BaseModel):
     adapter_path: Optional[str] = None  # ControlNet adapter path
     conditioning_scale: float = 0.5
     enabled: bool = False
+    image: Optional[str] = None  # Base64 encoded image
     _control_image: Image = None  # Control image, PIL image
 
 
