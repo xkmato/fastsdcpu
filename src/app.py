@@ -1,4 +1,5 @@
 import json
+import os
 from argparse import ArgumentParser
 
 from PIL import Image
@@ -309,6 +310,17 @@ if not args.realtime:
     from frontend.cli_interactive import interactive_mode
 
 if args.gui:
+    try:
+        import PyQt5
+
+        pyqt5_dir = os.path.dirname(PyQt5.__file__)
+        pyqt5_plugins = os.path.join(pyqt5_dir, "Qt5", "plugins")
+        pyqt5_platform_plugins = os.path.join(pyqt5_plugins, "platforms")
+        os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = pyqt5_platform_plugins
+        os.environ["QT_PLUGIN_PATH"] = pyqt5_plugins
+    except Exception:
+        pass
+
     from frontend.gui.ui import start_gui
 
     print("Starting desktop GUI mode(Qt)")
@@ -550,10 +562,10 @@ else:
             print(
                 f"                          FastSD Benchmark - {benchmark_name:8}                         "
             )
-            print(f"-" * 80)
+            print("-" * 80)
             for benchmark in benchmark_result:
                 print(f"{benchmark[0]:35} - {benchmark[1]}")
-            print(f"-" * 80)
+            print("-" * 80)
             print("*TAESD - Tiny AutoEncoder for Stable Diffusion")
 
         else:
