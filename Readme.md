@@ -17,17 +17,18 @@ The following interfaces are available :
 🚀 Using **OpenVINO(SDXS-512-0.9)**, it took **0.82 seconds** (**820 milliseconds**) to create a single 512x512 image on a **Core i7-12700**.
 
 ## 📰 News
-- **2026-05-01** - Docker support, HF demo 
+
+- **2026-05-01** - Docker support, HF demo
 - **2025-12-22** - FastSD engine integrated into [Intel's OpenVINO™ AI Plugins for GIMP](https://github.com/intel/openvino-ai-plugins-gimp)
 - **2025-05-17** - Added SANA Sprint(OpenVINO) support,Tiny AutoEncoder 1.3(Mocha Croissant) support
 - **2025-04-20** - Added MCP server support,faster uv based installation,Claude desktop, Open WebUI support
 - **2024-11-03** - Added Intel Core Ultra Series 2 (Lunar Lake) NPU support
 - **2024-10-02** - Added GGUF diffusion model(Flux) support
-- **2024-09-03** – Added Intel AI PC GPU, NPU support 🚀  
+- **2024-09-03** – Added Intel AI PC GPU, NPU support 🚀
 
 ## Table of Contents 👇
 
-- [Supported&nbsp;Platforms](#Supported&nbsp;platforms)
+- [Supported&nbsp;Platforms](#Supported platforms)
 - [Dependencies](#dependencies)
 - [Memory requirements](#memory-requirements)
 - [Features](#features)
@@ -74,11 +75,11 @@ Model (LCM,OpenVINO): SD Turbo, 1 step, 512 x 512
 
 Model (LCM-LoRA): Dreamshaper v8, 3 step, 512 x 512
 
-| Mode                  | Min RAM       |
-| --------------------- | ------------- |
-| LCM                   | 2 GB          |
-| LCM-LoRA              | 4 GB          |
-| OpenVINO              | 11 GB         |
+| Mode     | Min RAM |
+| -------- | ------- |
+| LCM      | 2 GB    |
+| LCM-LoRA | 4 GB    |
+| OpenVINO | 11 GB   |
 
 If we enable Tiny decoder(TAESD) we can save some memory(2GB approx) for example in OpenVINO mode memory usage will become 9GB.
 
@@ -101,7 +102,7 @@ If we enable Tiny decoder(TAESD) we can save some memory(2GB approx) for example
 - Added Tiny Auto Encoder for SD (TAESD) support, 1.4x speed boost (Fast,moderate quality)
 - Safety checker disabled by default
 - Added SDXL,SSD1B - 1B LCM models
-- Added LCM-LoRA support, works well for fine-tuned Stable Diffusion model 1.5  or SDXL models
+- Added LCM-LoRA support, works well for fine-tuned Stable Diffusion model 1.5 or SDXL models
 - Added negative prompt support in LCM-LoRA mode
 - LCM-LoRA models can be configured using text configuration file
 - Added support for custom models for OpenVINO (LCM-LoRA baked)
@@ -149,7 +150,6 @@ If we enable Tiny decoder(TAESD) we can save some memory(2GB approx) for example
 - Add Image to Image and Image Variations Qt GUI support,thanks [monstruosoft](https://github.com/monstruosoft)
 - Add single file SDXL safetensor file support,thanks [monstruosoft](https://github.com/monstruosoft)
 
-
 <a id="fast-inference-benchmarks"></a>
 
 ## Fast Inference Benchmarks
@@ -165,19 +165,19 @@ Fast 1 step inference supported on `runwayml/stable-diffusion-v1-5` model,select
 
 Works with LCM and LCM-OpenVINO mode.
 
-- *Hyper-SD SDXL 1 step* - [rupeshs/hyper-sd-sdxl-1-step](https://huggingface.co/rupeshs/hyper-sd-sdxl-1-step)
+- _Hyper-SD SDXL 1 step_ - [rupeshs/hyper-sd-sdxl-1-step](https://huggingface.co/rupeshs/hyper-sd-sdxl-1-step)
 
-- *Hyper-SD SDXL 1 step OpenVINO* - [rupeshs/hyper-sd-sdxl-1-step-openvino-int8](https://huggingface.co/rupeshs/hyper-sd-sdxl-1-step-openvino-int8)
+- _Hyper-SD SDXL 1 step OpenVINO_ - [rupeshs/hyper-sd-sdxl-1-step-openvino-int8](https://huggingface.co/rupeshs/hyper-sd-sdxl-1-step-openvino-int8)
 
 #### Inference Speed
 
 Tested on Core i7-12700 to generate **768x768** image(1 step).
 
-| Diffusion Pipeline    | Latency       |
-| --------------------- | ------------- |
-| Pytorch               | 19s           |
-| OpenVINO              | 13s           |
-| OpenVINO + TAESDXL    | 6.3s          |
+| Diffusion Pipeline | Latency |
+| ------------------ | ------- |
+| Pytorch            | 19s     |
+| OpenVINO           | 13s     |
+| OpenVINO + TAESDXL | 6.3s    |
 
 ### Fastest 1 step inference (SDXS-512-0.9)
 
@@ -189,11 +189,11 @@ Tested on Core i7-12700 to generate **512x512** image(1 step).
 
 **SDXS-512-0.9**
 
-| Diffusion Pipeline    | Latency       |
-| --------------------- | ------------- |
-| Pytorch               | 4.8s          |
-| OpenVINO              | 3.8s          |
-| OpenVINO + TAESD      | **0.82s**     |
+| Diffusion Pipeline | Latency   |
+| ------------------ | --------- |
+| Pytorch            | 4.8s      |
+| OpenVINO           | 3.8s      |
+| OpenVINO + TAESD   | **0.82s** |
 
 ### 🚀 Fast 1 step inference (SD/SDXL Turbo - Adversarial Diffusion Distillation,ADD)
 
@@ -207,19 +207,19 @@ Tested on Core i7-12700 to generate **512x512** image(1 step).
 
 **SD Turbo**
 
-| Diffusion Pipeline    | Latency       |
-| --------------------- | ------------- |
-| Pytorch               | 7.8s          |
-| OpenVINO              | 5s            |
-| OpenVINO + TAESD      | 1.7s          |
+| Diffusion Pipeline | Latency |
+| ------------------ | ------- |
+| Pytorch            | 7.8s    |
+| OpenVINO           | 5s      |
+| OpenVINO + TAESD   | 1.7s    |
 
 **SDXL Turbo**
 
-| Diffusion Pipeline    | Latency       |
-| --------------------- | ------------- |
-| Pytorch               | 10s           |
-| OpenVINO              | 5.6s          |
-| OpenVINO + TAESDXL    | 2.5s          |
+| Diffusion Pipeline | Latency |
+| ------------------ | ------- |
+| Pytorch            | 10s     |
+| OpenVINO           | 5.6s    |
+| OpenVINO + TAESDXL | 2.5s    |
 
 ### 🚀 Fast 2 step inference (SDXL-Lightning - Adversarial Diffusion Distillation)
 
@@ -227,15 +227,15 @@ SDXL-Lightning works with LCM and LCM-OpenVINO mode.You can select these models 
 
 Tested on Core i7-12700 to generate **768x768** image(2 steps).
 
-| Diffusion Pipeline    | Latency       |
-| --------------------- | ------------- |
-| Pytorch               | 18s           |
-| OpenVINO              | 12s           |
-| OpenVINO + TAESDXL    | 10s           |
+| Diffusion Pipeline | Latency |
+| ------------------ | ------- |
+| Pytorch            | 18s     |
+| OpenVINO           | 12s     |
+| OpenVINO + TAESDXL | 10s     |
 
-- *SDXL-Lightning* - [rupeshs/SDXL-Lightning-2steps](https://huggingface.co/rupeshs/SDXL-Lightning-2steps)
+- _SDXL-Lightning_ - [rupeshs/SDXL-Lightning-2steps](https://huggingface.co/rupeshs/SDXL-Lightning-2steps)
 
-- *SDXL-Lightning OpenVINO* - [rupeshs/SDXL-Lightning-2steps-openvino-int8](https://huggingface.co/rupeshs/SDXL-Lightning-2steps-openvino-int8)
+- _SDXL-Lightning OpenVINO_ - [rupeshs/SDXL-Lightning-2steps-openvino-int8](https://huggingface.co/rupeshs/SDXL-Lightning-2steps-openvino-int8)
 
 ### 2 Steps fast inference (LCM)
 
@@ -251,14 +251,14 @@ FastSD CPU supports 2 to 3 steps fast inference using LCM-LoRA workflow. It work
 
 - As of now only text to image generation mode is supported
 - Use OpenVINO mode
-- Use int4 model - *rupeshs/FLUX.1-schnell-openvino-int4*
+- Use int4 model - _rupeshs/FLUX.1-schnell-openvino-int4_
 - 512x512 image generation needs around **30GB** system RAM
 
 Tested on Intel Core i7-12700 to generate **512x512** image(3 steps).
 
-| Diffusion Pipeline    | Latency       |
-| --------------------- | ------------- |
-| OpenVINO              | 4 min 30sec   |
+| Diffusion Pipeline | Latency     |
+| ------------------ | ----------- |
+| OpenVINO           | 4 min 30sec |
 
 ### Benchmark scripts
 
@@ -288,9 +288,9 @@ These are models converted to use directly use it with FastSD CPU. These models 
 
 We have converted SD/SDXL Turbo models to OpenVINO for fast inference on CPU. These models are intended for research purpose only. Also we converted TAESDXL MODEL to OpenVINO and
 
-- *SD Turbo OpenVINO* - [rupeshs/sd-turbo-openvino](https://huggingface.co/rupeshs/sd-turbo-openvino)
-- *SDXL Turbo OpenVINO int8* - [rupeshs/sdxl-turbo-openvino-int8](https://huggingface.co/rupeshs/sdxl-turbo-openvino-int8)
-- *TAESDXL OpenVINO* - [rupeshs/taesdxl-openvino](https://huggingface.co/rupeshs/taesdxl-openvino)
+- _SD Turbo OpenVINO_ - [rupeshs/sd-turbo-openvino](https://huggingface.co/rupeshs/sd-turbo-openvino)
+- _SDXL Turbo OpenVINO int8_ - [rupeshs/sdxl-turbo-openvino-int8](https://huggingface.co/rupeshs/sdxl-turbo-openvino-int8)
+- _TAESDXL OpenVINO_ - [rupeshs/taesdxl-openvino](https://huggingface.co/rupeshs/taesdxl-openvino)
 
 You can directly use these models in FastSD CPU.
 
@@ -330,9 +330,9 @@ These are LCM-LoRA baked in models. These models can be configured in `configs/o
 
 These models can be configured in `configs/lcm-lora-models.txt` file.
 
-- *lcm-lora-sdv1-5* - distilled consistency adapter for [runwayml/stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5)
-- *lcm-lora-sdxl* - Distilled consistency adapter for [stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0)
-- *lcm-lora-ssd-1b* - Distilled consistency adapter for [segmind/SSD-1B](https://huggingface.co/segmind/SSD-1B)
+- _lcm-lora-sdv1-5_ - distilled consistency adapter for [runwayml/stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5)
+- _lcm-lora-sdxl_ - Distilled consistency adapter for [stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0)
+- _lcm-lora-ssd-1b_ - Distilled consistency adapter for [segmind/SSD-1B](https://huggingface.co/segmind/SSD-1B)
 
 These models are used with Stablediffusion base models `configs/stable-diffusion-models.txt`.
 
@@ -344,7 +344,7 @@ To add new model follow the steps:
 For example we will add `wavymulder/collage-diffusion`, you can give Stable diffusion 1.5 Or SDXL,SSD-1B fine tuned models.
 
 1. Open `configs/stable-diffusion-models.txt` file in text editor.
-2. Add the model ID `wavymulder/collage-diffusion`  or locally cloned path.
+2. Add the model ID `wavymulder/collage-diffusion` or locally cloned path.
 
 Updated file as shown below :
 
@@ -363,9 +363,9 @@ Similarly we can update `configs/lcm-lora-models.txt` file with lcm-lora ID.
 
 Please follow the steps to run LCM-LoRA models offline :
 
-- In the settings ensure that  "Use locally cached model" setting is ticked.
+- In the settings ensure that "Use locally cached model" setting is ticked.
 - Download the model for example `latent-consistency/lcm-lora-sdv1-5`
-Run the following commands:
+  Run the following commands:
 
 ```
 git lfs install
@@ -382,7 +382,7 @@ latent-consistency/lcm-lora-ssd-1b
 
 - Open the app and select the newly added local folder in the combo box menu.
 - That's all!
-<a id="useloramodels"></a>
+  <a id="useloramodels"></a>
 
 ## How to use Lora models
 
@@ -410,7 +410,7 @@ Use the medium size models (723 MB)(For example : <https://huggingface.co/comfya
 To install FastSD CPU on Windows run the following steps :
 
 - Clone/download this repo or download [release](https://github.com/rupeshs/fastsdcpu/releases).
-- Double click `install.bat`  (It will take some time to install,depending on your internet speed.)
+- Double click `install.bat` (It will take some time to install,depending on your internet speed.)
 - You can run in desktop GUI mode or web UI mode.
 
 #### Desktop GUI
@@ -435,11 +435,13 @@ To install FastSD CPU on Windows run the following steps :
 
 #### To start Desktop GUI
 
-  `./start.sh`
+`./start.sh`
+
+> On WSL, desktop GUI can fail if Qt xcb dependencies are missing. If you get plugin errors, install your distro's Qt X11 libraries (for Debian/Ubuntu: `sudo apt install libxcb-xinerama0`) or use `./start-webui.sh` instead.
 
 #### To start Web UI
 
-  `./start-webui.sh`
+`./start-webui.sh`
 
 ### FastSD CPU on Mac
 
@@ -459,15 +461,15 @@ Run the following commands to install FastSD CPU on Mac :
 
 #### To start Desktop GUI
 
-  `./start.sh`
+`./start.sh`
 
 #### To start Web UI
 
-  `./start-webui.sh`
+`./start-webui.sh`
 
 Thanks [Autantpourmoi](https://github.com/Autantpourmoi) for Mac testing.
 
-:exclamation:We don't support OpenVINO on Mac (M1/M2/M3 chips, but *does* work on Intel chips).
+:exclamation:We don't support OpenVINO on Mac (M1/M2/M3 chips, but _does_ work on Intel chips).
 
 If you want to increase image generation speed on Mac(M1/M2 chip) try this:
 
@@ -486,20 +488,21 @@ Due to the limitation of using CPU/OpenVINO inside colab, we are using GPU with 
 
 ![FastSD CPU CLI Screenshot](https://raw.githubusercontent.com/rupeshs/fastsdcpu/main/docs/images/fastcpu-cli.png)
 
- Open the terminal and enter into fastsdcpu folder.
- Activate virtual environment using the command:
+Open the terminal and enter into fastsdcpu folder.
+Activate virtual environment using the command:
 
 ##### Windows users
 
- (Suppose FastSD CPU available in the directory "D:\fastsdcpu")
-  `D:\fastsdcpu\env\Scripts\activate.bat`
+(Suppose FastSD CPU available in the directory "D:\fastsdcpu")
+`D:\fastsdcpu\env\Scripts\activate.bat`
 
 ##### Linux users
 
-  `source env/bin/activate`
+`source env/bin/activate`
 
-Start CLI  `src/app.py -h`
+Start CLI `src/app.py -h`
 <a id="dockersupport"></a>
+
 ## Docker support
 
 To run FastSDCPU using docker run the following command:
@@ -539,9 +542,9 @@ FastSD CPU supports basic API endpoints. Following API endpoints are available :
 - /api/generate - Generate images (Text to image,image to image)
 
 To start FastAPI in webserver mode run:
-``python src/app.py --api``
+`python src/app.py --api`
 
-or use  `start-webserver.sh` for Linux and  `start-webserver.bat` for Windows.
+or use `start-webserver.sh` for Linux and `start-webserver.bat` for Windows.
 
 Access API documentation locally at <http://localhost:8000/api/docs> .
 
@@ -578,7 +581,7 @@ Supported mode - Text to image
 
   For Linux users download [libstable-diffusion.so](https://huggingface.co/rupeshs/FastSD-Flux-GGUF/blob/main/libstable-diffusion.so)
 
-  You can also build the library manully by following the guide *"Build stablediffusion.cpp shared library for GGUF flux model support"*
+  You can also build the library manully by following the guide _"Build stablediffusion.cpp shared library for GGUF flux model support"_
 
 - Download **diffusion model** from [flux1-schnell-q4_0.gguf](https://huggingface.co/rupeshs/FastSD-Flux-GGUF/blob/main/flux1-schnell-q4_0.gguf) and place it inside `models/gguf/diffusion` directory
 - Download **clip model** from [clip_l_q4_0.gguf](https://huggingface.co/rupeshs/FastSD-Flux-GGUF/blob/main/clip_l_q4_0.gguf) and place it inside `models/gguf/clip` directory
@@ -623,7 +626,7 @@ FastSD tested with following Intel processor's NPUs:
 - Intel Core Ultra Series 1 (Meteor Lake)
 - Intel Core Ultra Series 2 (Lunar Lake)
 
-Currently FastSD support this model for NPU  [rupeshs/sd15-lcm-square-openvino-int8](https://huggingface.co/rupeshs/sd15-lcm-square-openvino-int8).
+Currently FastSD support this model for NPU [rupeshs/sd15-lcm-square-openvino-int8](https://huggingface.co/rupeshs/sd15-lcm-square-openvino-int8).
 
 Supports following modes on NPU :
 
@@ -643,7 +646,7 @@ This is heterogeneous computing since text encoder and Unet will use NPU and VAE
 
 Please note that tiny auto encoder will not work in NPU mode.
 
-*Thanks to Intel for providing AI PC dev kit and Tiber cloud access to test FastSD, special thanks to [Pooja Baraskar](https://github.com/Pooja-B),[Dmitriy Pastushenkov](https://github.com/DimaPastushenkov).*
+_Thanks to Intel for providing AI PC dev kit and Tiber cloud access to test FastSD, special thanks to [Pooja Baraskar](https://github.com/Pooja-B),[Dmitriy Pastushenkov](https://github.com/DimaPastushenkov)._
 
 <a id="mcpsupport"></a>
 
@@ -652,15 +655,15 @@ Please note that tiny auto encoder will not work in NPU mode.
 FastSDCPU now supports [MCP(Model Context Protocol)](https://modelcontextprotocol.io/introduction) server.
 
 - Start FastSDCPU MCP server:
-``python src/app.py --mcp``
-or
-Run  `start-mcpserver.sh` for Linux and  `start-mcpserver.bat` for Windows.
+  `python src/app.py --mcp`
+  or
+  Run `start-mcpserver.sh` for Linux and `start-mcpserver.bat` for Windows.
 
 FastSDCPU MCP server will be running at <http://127.0.0.1:8000/mcp>
 
 It can be used with AI apps that support MCP protocol for example [Claude desktop](https://claude.ai/download)
 
-Note:  OpenWebUI not directly using MCP protocol it is based on OpenAPI protocol.
+Note: OpenWebUI not directly using MCP protocol it is based on OpenAPI protocol.
 
 ### Claude desktop
 
@@ -674,10 +677,7 @@ To connect with FastSD MCP server first configure Claude desktop :
   "mcpServers": {
     "fastsdcpu": {
       "command": "npx",
-      "args": [
-        "mcp-remote",
-        "http://127.0.0.1:8000/mcp"
-      ]
+      "args": ["mcp-remote", "http://127.0.0.1:8000/mcp"]
     }
   }
 }
@@ -699,9 +699,9 @@ The FastSDCPU can be used with [OpenWebUI](https://github.com/open-webui/open-we
 Follow the below steps to FastSD to use with Open WebUI.
 
 - Start FastSDCPU MCP server:
-``python src/app.py --mcp``
-or
-Run  `start-mcpserver.sh` for Linux and  `start-mcpserver.bat` for Windows.
+  `python src/app.py --mcp`
+  or
+  Run `start-mcpserver.sh` for Linux and `start-mcpserver.bat` for Windows.
 
 - Update server URL in the settings page as shown below
 
@@ -728,10 +728,10 @@ The fastsdcpu project is available as open source under the terms of the [MIT li
 <a id="gimpplugin"></a>
 
 ## GIMP Plugin
+
 FastSD engine integrated into [Intel's OpenVINO™ AI Plugins for GIMP](https://github.com/intel/openvino-ai-plugins-gimp). It supports CPU/GPU and NPU and AI PC. Thanks to Intel for providing access to [Intel® Tiber™ AI Cloud](https://developer.habana.ai/intel-ai-cloud/) to develop and test with latest AI PC( Intel Core Ultra Series 2).
 
 For more details check this [readme](https://github.com/intel/openvino-ai-plugins-gimp?tab=readme-ov-file#fastsd-plugin).
-
 
 ## Disclaimer
 
@@ -741,7 +741,7 @@ Users are granted the freedom to create images using this tool, but they are obl
 
 ## Thanks to all our contributors
 
-Original Author & Maintainer  - [Rupesh Sreeraman](https://github.com/rupeshs)
+Original Author & Maintainer - [Rupesh Sreeraman](https://github.com/rupeshs)
 
 We thank all contributors for their time and hard work!
 
